@@ -210,7 +210,7 @@ export function RsvpSection() {
                 <button
                   type="submit"
                   disabled={status === "sending"}
-                  className="mt-7 w-full rounded-full bg-foreground px-6 py-3.5 font-display text-base tracking-[0.15em] text-secondary-foreground uppercase transition-opacity hover:opacity-90 disabled:opacity-60"
+                  className="mt-7 w-full rounded-full bg-accent px-6 py-3.5 font-display text-base tracking-[0.15em] text-accent-foreground uppercase shadow-[0_10px_30px_-12px_oklch(0.68_0.1_80/0.7)] transition-all hover:bg-secondary hover:shadow-[0_12px_34px_-10px_oklch(0.78_0.09_82/0.8)] disabled:opacity-60"
                 >
                   {status === "sending" ? rsvp.sending : rsvp.submit}
                 </button>
