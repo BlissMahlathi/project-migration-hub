@@ -18,10 +18,10 @@ import {
   type ProgramGroup,
   type ProgramItem,
 } from "@/data/wedding";
-import couplePortrait from "@/assets/couple-portrait.jpg.asset.json";
-import venueChapel from "@/assets/venue-chapel.jpg.asset.json";
-import venueEntrance from "@/assets/venue-entrance.jpg.asset.json";
-import venueFountain from "@/assets/venue-fountain.jpg.asset.json";
+import couplePortrait from "@/assets/couple-portrait.jpg";
+import venueChapel from "@/assets/venue-chapel.jpg";
+import venueEntrance from "@/assets/venue-entrance.jpg";
+import venueFountain from "@/assets/venue-fountain.jpg";
 
 export const Route = createFileRoute("/")({
   component: Index,
