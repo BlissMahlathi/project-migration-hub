@@ -15,3 +15,4 @@
 
 # Migration
 - Migrated from the old Lovable project (1c88d8c2) code archive on 2026-10-31; RSVPs go through the anon-insert `rsvps` table in Lovable Cloud via the generated client in `RsvpSection`. No auth is used.
+- RSVP success shows a WhatsApp CTA (`src/lib/whatsapp.ts`): opens WhatsApp with the RSVP prefilled. `COUPLE_WHATSAPP_NUMBER` is empty until the couple's number is provided — empty means the wa.me share picker; once set (digits only) it opens their chat directly.
