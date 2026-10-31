@@ -4,20 +4,16 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/*
- * Design system definition.
- *
- * The @theme inline block maps CSS custom properties to Tailwind utility
- * classes (e.g. --color-primary -> bg-primary, text-primary).
- *
- * The :root and .dark blocks define the actual color values using oklch.
- * All colors MUST use oklch format.
- *
- * To add a new semantic color:
- * 1. Add the variable to :root (light value) and .dark (dark value)
- * 2. Register it in @theme inline as --color-<name>: var(--<name>)
- */
+@theme {
+  --font-display: "Cormorant Garamond", "Times New Roman", serif;
+  --font-script: "Great Vibes", cursive;
+  --font-body: "Jost", "Century Gothic", sans-serif;
+}
 
+/*
+ * Design system — warm brown & gold wedding palette.
+ * The @theme inline block maps CSS custom properties to Tailwind utilities.
+ */
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -45,91 +41,52 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-ring-offset-background: var(--background);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
 }
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
+  /* Warm brown & gold: espresso ink on cream paper with champagne accents */
+  --background: oklch(0.965 0.018 80);
+  --foreground: oklch(0.3 0.05 48);
+  --card: oklch(0.985 0.012 80);
+  --card-foreground: oklch(0.3 0.05 48);
+  --popover: oklch(0.985 0.012 80);
+  --popover-foreground: oklch(0.3 0.05 48);
+  --primary: oklch(0.52 0.075 58);
+  --primary-foreground: oklch(0.965 0.018 80);
+  --secondary: oklch(0.78 0.09 82);
+  --secondary-foreground: oklch(0.32 0.05 50);
+  --muted: oklch(0.92 0.03 78);
+  --muted-foreground: oklch(0.52 0.04 60);
+  --accent: oklch(0.68 0.1 80);
+  --accent-foreground: oklch(0.28 0.05 48);
   --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.984 0.003 247.858);
-  --sidebar-foreground: oklch(0.129 0.042 264.695);
-  --sidebar-primary: oklch(0.208 0.042 265.755);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.968 0.007 247.896);
-  --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
-  --sidebar-border: oklch(0.929 0.013 255.508);
-  --sidebar-ring: oklch(0.704 0.04 256.788);
+  --destructive-foreground: oklch(0.985 0.012 80);
+  --border: oklch(0.86 0.04 76);
+  --input: oklch(0.86 0.04 76);
+  --ring: oklch(0.68 0.1 80);
 }
 
 .dark {
-  --background: oklch(0.129 0.042 264.695);
-  --foreground: oklch(0.984 0.003 247.858);
-  --card: oklch(0.208 0.042 265.755);
-  --card-foreground: oklch(0.984 0.003 247.858);
-  --popover: oklch(0.208 0.042 265.755);
-  --popover-foreground: oklch(0.984 0.003 247.858);
-  --primary: oklch(0.929 0.013 255.508);
-  --primary-foreground: oklch(0.208 0.042 265.755);
-  --secondary: oklch(0.279 0.041 260.031);
-  --secondary-foreground: oklch(0.984 0.003 247.858);
-  --muted: oklch(0.279 0.041 260.031);
-  --muted-foreground: oklch(0.704 0.04 256.788);
-  --accent: oklch(0.279 0.041 260.031);
-  --accent-foreground: oklch(0.984 0.003 247.858);
+  --background: oklch(0.22 0.04 48);
+  --foreground: oklch(0.95 0.02 80);
+  --card: oklch(0.27 0.045 50);
+  --card-foreground: oklch(0.95 0.02 80);
+  --popover: oklch(0.27 0.045 50);
+  --popover-foreground: oklch(0.95 0.02 80);
+  --primary: oklch(0.78 0.09 82);
+  --primary-foreground: oklch(0.24 0.04 48);
+  --secondary: oklch(0.68 0.1 80);
+  --secondary-foreground: oklch(0.22 0.04 48);
+  --muted: oklch(0.3 0.045 50);
+  --muted-foreground: oklch(0.72 0.035 74);
+  --accent: oklch(0.68 0.1 80);
+  --accent-foreground: oklch(0.22 0.04 48);
   --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.551 0.027 264.364);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.208 0.042 265.755);
-  --sidebar-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.279 0.041 260.031);
-  --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.551 0.027 264.364);
+  --destructive-foreground: oklch(0.95 0.02 80);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 16%);
+  --ring: oklch(0.68 0.1 80);
 }
 
 @layer base {
@@ -140,5 +97,229 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-body);
   }
+
+  ::selection {
+    background: var(--color-accent);
+    color: var(--color-accent-foreground);
+  }
+}
+
+/* ---------- Scroll reveal ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition:
+    opacity 1s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+.reveal-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---------- Hero ken-burns ---------- */
+@keyframes kenburns {
+  from {
+    transform: scale(1.02);
+  }
+  to {
+    transform: scale(1.14) translateY(-1.5%);
+  }
+}
+.kenburns {
+  animation: kenburns 26s ease-in-out infinite alternate;
+}
+
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateY(10px);
+    opacity: 0.4;
+  }
+}
+.floaty {
+  animation: floaty 2.2s ease-in-out infinite;
+}
+
+/* ---------- Gold ornament divider ---------- */
+.divider-ornament {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+  color: var(--color-accent);
+}
+.divider-ornament::before,
+.divider-ornament::after {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 3.2em;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--color-accent),
+    transparent
+  );
+}
+
+/* ---------- Book opening scene ---------- */
+.book-scene {
+  perspective: 2600px;
+}
+.book-spread {
+  transform-style: preserve-3d;
+}
+.book-page {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  background:
+    linear-gradient(115deg, oklch(1 0 0 / 0.55), transparent 45%),
+    oklch(0.975 0.015 82);
+  box-shadow: inset 0 0 40px oklch(0.55 0.06 60 / 0.14);
+}
+.book-page-left {
+  left: 0;
+  border-radius: 8px 2px 2px 8px;
+  box-shadow:
+    inset -18px 0 30px -18px oklch(0.4 0.05 55 / 0.45),
+    inset 0 0 40px oklch(0.55 0.06 60 / 0.12);
+}
+.book-page-right {
+  right: 0;
+  border-radius: 2px 8px 8px 2px;
+  box-shadow:
+    inset 18px 0 30px -18px oklch(0.4 0.05 55 / 0.3),
+    inset 0 0 40px oklch(0.55 0.06 60 / 0.12);
+}
+.book-cover {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  transform-origin: left center;
+  transform-style: preserve-3d;
+  z-index: 10;
+}
+.cover-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: 3px 10px 10px 3px;
+  overflow: hidden;
+}
+.cover-front {
+  background:
+    radial-gradient(
+      ellipse 120% 90% at 20% 10%,
+      oklch(0.45 0.08 55 / 0.55),
+      transparent 60%
+    ),
+    linear-gradient(160deg, oklch(0.36 0.07 52), oklch(0.28 0.055 48));
+  box-shadow:
+    inset 0 0 0 1px oklch(0.6 0.09 80 / 0.35),
+    inset 0 0 60px oklch(0.15 0.03 48 / 0.6),
+    0 24px 60px -20px oklch(0.12 0.03 48 / 0.8);
+}
+.cover-frame {
+  position: absolute;
+  inset: 5.5%;
+  border: 1px solid oklch(0.7 0.1 82 / 0.55);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 6%;
+}
+.cover-frame::before {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border: 1px solid oklch(0.7 0.1 82 / 0.25);
+}
+.cover-back {
+  transform: rotateY(180deg);
+  background:
+    linear-gradient(115deg, oklch(1 0 0 / 0.5), transparent 45%),
+    oklch(0.975 0.015 82);
+  box-shadow: inset 18px 0 30px -18px oklch(0.4 0.05 55 / 0.4);
+}
+.cover-back::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 50%, oklch(0.7 0.1 82 / 0.14) 0, transparent 6%),
+    radial-gradient(circle at 50% 50%, transparent 8%, oklch(0.7 0.1 82 / 0.08) 8.2%, transparent 8.6%);
+}
+
+/* ---------- Story flip book ---------- */
+.story-leaf {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  transform-origin: left center;
+  transform-style: preserve-3d;
+}
+.story-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: 2px 10px 10px 2px;
+  overflow: hidden;
+}
+.story-face-back {
+  transform: rotateY(180deg);
+  border-radius: 10px 2px 2px 10px;
+}
+.story-paper {
+  background:
+    linear-gradient(115deg, oklch(1 0 0 / 0.5), transparent 45%),
+    oklch(0.975 0.015 82);
+  box-shadow: inset 0 0 40px oklch(0.55 0.06 60 / 0.12);
+}
+.leaf-shade {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+}
+.shade-front {
+  background: linear-gradient(
+    to left,
+    oklch(0.25 0.05 48 / 0.45),
+    transparent 60%
+  );
+}
+.shade-back {
+  background: linear-gradient(
+    to right,
+    oklch(0.25 0.05 48 / 0.45),
+    transparent 60%
+  );
+}
+.story-text::first-letter {
+  font-family: var(--font-script);
+  font-size: 2.4em;
+  line-height: 0.8;
+  float: left;
+  padding-right: 0.12em;
+  color: var(--color-accent);
+}
+.mpage {
+  position: absolute;
+  inset: 0;
+  will-change: transform;
 }
