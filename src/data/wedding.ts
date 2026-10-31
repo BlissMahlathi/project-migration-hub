@@ -239,4 +239,7 @@ export const rsvp = {
   successTitle: "Thank you!",
   successBody: "Your RSVP has been received. We cannot wait to celebrate with you.",
   errorBody: "Something went wrong sending your RSVP. Please try again.",
+  whatsappCta: "Send it on WhatsApp",
+  whatsappNote:
+    "Tap to open WhatsApp with your RSVP prefilled — pick the chat to send it to. Optional: your RSVP is already recorded.",
 };

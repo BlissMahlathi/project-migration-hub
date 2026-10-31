@@ -2,8 +2,16 @@ import { useState, type FormEvent } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { rsvp } from "@/data/wedding";
 import { Reveal } from "@/components/Reveal";
+import { buildWhatsappLink } from "@/lib/whatsapp";
 
 type Status = "idle" | "sending" | "done" | "error";
+
+type SubmittedRsvp = {
+  fullName: string;
+  attending: "yes" | "no";
+  guests: number;
+  message: string;
+};
 
 const inputClass =
   "w-full rounded-xl border border-accent/30 bg-background px-4 py-3 font-body text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:ring-accent/60";
@@ -20,6 +28,7 @@ export function RsvpSection() {
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState<string | null>(null);
+  const [submitted, setSubmitted] = useState<SubmittedRsvp | null>(null);
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
@@ -51,6 +60,12 @@ export function RsvpSection() {
       setError(rsvp.errorBody);
       return;
     }
+    setSubmitted({
+      fullName: name,
+      attending,
+      guests,
+      message: message.trim(),
+    });
     setStatus("done");
   }
 
@@ -93,6 +108,24 @@ export function RsvpSection() {
                 <div className="divider-ornament mt-5 justify-center" />
                 <p className="mt-5 font-body text-[0.95rem] leading-relaxed font-light text-muted-foreground">
                   {rsvp.successBody}
+                </p>
+                {submitted ? (
+                  <a
+                    href={buildWhatsappLink(
+                      submitted.fullName,
+                      submitted.attending,
+                      submitted.guests,
+                      submitted.message,
+                    )}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-accent px-6 py-3 font-display text-sm tracking-[0.12em] text-accent-foreground uppercase shadow-[0_10px_30px_-12px_oklch(0.68_0.1_80/0.7)] transition-colors hover:bg-secondary"
+                  >
+                    {rsvp.whatsappCta}
+                  </a>
+                ) : null}
+                <p className="mt-4 font-body text-xs font-light text-muted-foreground">
+                  {rsvp.whatsappNote}
                 </p>
               </div>
             ) : (
