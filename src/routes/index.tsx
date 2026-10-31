@@ -62,7 +62,7 @@ function Cover() {
   return (
     <section className="relative h-[100svh] overflow-hidden bg-foreground">
       <img
-        src={couplePortrait.url}
+        src={couplePortrait}
         alt="Tebogo and Mpho"
         className="kenburns absolute inset-0 h-full w-full object-cover object-[50%_20%]"
       />
@@ -312,10 +312,10 @@ function Index() {
 
           <div className="mt-12 grid gap-6 sm:grid-cols-3">
             {[venueEntrance, venueChapel, venueFountain].map((image, i) => (
-              <Reveal key={image.url} delay={i * 100}>
+              <Reveal key={image} delay={i * 100}>
                 <div className="group relative overflow-hidden rounded-3xl shadow-[0_24px_60px_-24px_oklch(0.35_0.06_50/0.5)]">
                   <img
-                    src={image.url}
+                    src={image}
                     alt={venueSection.script}
                     className="aspect-[4/5] w-full object-cover transition-transform duration-[1.6s] ease-out hover:scale-105"
                     loading="lazy"
