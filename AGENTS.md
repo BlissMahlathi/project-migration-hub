@@ -8,3 +8,10 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+# Frontend patterns
+- Story chapters render as a scroll-driven flip book (`src/components/StoryBook.tsx`) using the same refs + requestAnimationFrame DOM-style updates as `BookChapter`; keep both in sync if the book geometry changes.
+- The couple portrait belongs on the cover; the three venue photos (`venue-entrance`, `venue-chapel`, `venue-fountain`) belong only in the venue gallery, never in story sections.
+
+# Migration
+- Migrated from the old Lovable project (1c88d8c2) code archive on 2026-10-31; RSVPs go through the anon-insert `rsvps` table in Lovable Cloud via the generated client in `RsvpSection`. No auth is used.
