@@ -245,21 +245,14 @@ function Index() {
 
       {/* THE MENU */}
       <section id="menu" className="relative isolate overflow-hidden bg-background py-20 sm:py-28">
-        <div className="pointer-events-none absolute -inset-8 overflow-hidden" aria-hidden="true">
-          <div className="menu-image-track flex h-full w-max">
-            {[venueEntrance, venueChapel, venueFountain, venueEntrance, venueChapel, venueFountain].map(
-              (image, index) => (
-                <img
-                  key={`${image}-${index}`}
-                  src={image}
-                  alt=""
-                  className="h-full w-[78vw] max-w-[920px] object-cover sm:w-[60vw]"
-                />
-              ),
-            )}
-          </div>
+        <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+          <img
+            src={venueEntrance}
+            alt=""
+            className="h-full w-full object-cover opacity-35"
+          />
         </div>
-        <div className="pointer-events-none absolute inset-0 bg-background/10 backdrop-blur-[2px]" aria-hidden="true" />
+        <div className="pointer-events-none absolute inset-0 bg-background/45 backdrop-blur-[1px]" aria-hidden="true" />
         <div className="relative z-10 mx-auto max-w-4xl px-6">
           <Reveal className="text-center">
             <p className="font-body text-[0.65rem] tracking-[0.5em] text-accent uppercase">
