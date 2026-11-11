@@ -209,7 +209,7 @@ function Index() {
           <div className="mt-14 grid gap-8 lg:grid-cols-2">
             <Reveal>
               <ProgramCard label="Part I" group={matrimonial}>
-                <div className="mt-8 rounded-2xl border border-accent/40 bg-accent/10 px-5 py-4 text-center">
+                <div className="mt-8 hidden rounded-2xl border border-accent/40 bg-accent/10 px-5 py-4 text-center">
                   <p className="font-display text-lg tracking-[0.12em] text-accent">
                     {ceremonyBanner}
                   </p>
