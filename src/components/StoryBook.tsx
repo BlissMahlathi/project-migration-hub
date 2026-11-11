@@ -1,8 +1,8 @@
 import { useEffect, useRef } from "react";
 import { couple, openingQuote, storyChapters, todayNote } from "@/data/wedding";
-import story1 from "@/assets/story-1.jpg";
-import story2 from "@/assets/story-2.jpg";
-import story3 from "@/assets/story-3.jpg";
+import story1 from "@/assets/friend-ship.jpeg";
+import story2 from "@/assets/turning-point.jpeg";
+import story3 from "@/assets/first-picture.jpeg";
 import story4 from "@/assets/story-4.jpg";
 
 const clamp01 = (v: number) => Math.min(Math.max(v, 0), 1);
