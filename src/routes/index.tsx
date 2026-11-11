@@ -3,7 +3,6 @@ import type { ReactNode } from "react";
 import { BookChapter } from "@/components/BookChapter";
 import { Countdown } from "@/components/Countdown";
 import { Reveal } from "@/components/Reveal";
-import { RsvpSection } from "@/components/RsvpSection";
 import { StoryBook } from "@/components/StoryBook";
 import {
   ceremonyBanner,
@@ -245,8 +244,23 @@ function Index() {
       </section>
 
       {/* THE MENU */}
-      <section id="menu" className="relative overflow-hidden bg-background py-20 sm:py-28">
-        <div className="mx-auto max-w-4xl px-6">
+      <section id="menu" className="relative isolate overflow-hidden bg-background py-20 sm:py-28">
+        <div className="pointer-events-none absolute -inset-8 overflow-hidden" aria-hidden="true">
+          <div className="menu-image-track flex h-full w-max">
+            {[venueEntrance, venueChapel, venueFountain, venueEntrance, venueChapel, venueFountain].map(
+              (image, index) => (
+                <img
+                  key={`${image}-${index}`}
+                  src={image}
+                  alt=""
+                  className="h-full w-[78vw] max-w-[920px] object-cover sm:w-[60vw]"
+                />
+              ),
+            )}
+          </div>
+        </div>
+        <div className="pointer-events-none absolute inset-0 bg-background/75 backdrop-blur-xl" aria-hidden="true" />
+        <div className="relative z-10 mx-auto max-w-4xl px-6">
           <Reveal className="text-center">
             <p className="font-body text-[0.65rem] tracking-[0.5em] text-accent uppercase">
               Chapter Three
@@ -327,9 +341,6 @@ function Index() {
           </div>
         </div>
       </section>
-
-      {/* RSVP */}
-      <RsvpSection />
 
       {/* CLOSING */}
       <footer className="relative overflow-hidden bg-foreground py-20 text-center">
