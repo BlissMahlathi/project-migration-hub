@@ -148,6 +148,31 @@
   animation: floaty 2.2s ease-in-out infinite;
 }
 
+/* ---------- Slow-moving, frosted venue photos behind the menu ---------- */
+@keyframes menu-image-drift {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.menu-image-track {
+  animation: menu-image-drift 70s linear infinite;
+}
+
+.menu-image-track img {
+  filter: blur(6px);
+  transform: scale(1.04);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menu-image-track {
+    animation: none;
+  }
+}
+
 /* ---------- Gold ornament divider ---------- */
 .divider-ornament {
   display: inline-flex;
