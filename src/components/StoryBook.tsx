@@ -179,7 +179,7 @@ export function StoryBook() {
                     width={1024}
                     height={768}
                     loading="lazy"
-                    className="story-image h-full w-full object-cover"
+                    className="story-image h-full w-full object-contain object-center"
                   />
                   <div className="pointer-events-none absolute inset-3 rounded-lg border border-secondary/50" />
                   <p className="absolute right-0 bottom-6 left-0 text-center font-body text-[0.5rem] tracking-[0.35em] text-background uppercase drop-shadow-[0_1px_4px_oklch(0.2_0.05_48/0.8)]">
@@ -235,7 +235,7 @@ export function StoryBook() {
                   width={1024}
                   height={768}
                   loading="lazy"
-                  className="story-image h-[30%] w-full shrink-0 object-cover"
+                  className="story-image h-[30%] w-full shrink-0 object-contain object-center"
                 />
                 <div className="flex min-h-0 flex-1 flex-col px-6 py-4">
                   <p className="font-body text-[0.5rem] tracking-[0.3em] text-accent uppercase">

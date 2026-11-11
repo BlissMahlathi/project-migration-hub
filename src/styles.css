@@ -310,6 +310,7 @@
   border-radius: 10px 2px 2px 10px;
 }
 .story-image {
+  background: oklch(0.2 0.03 48);
   filter: grayscale(1);
 }
 .story-paper {
