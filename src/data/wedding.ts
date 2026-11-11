@@ -165,6 +165,8 @@ export const receptionGroups: ProgramGroup[] = [
   },
 ];
 
+export const ceremonyBanner = "Photography & Starters Served!";
+
 export type MenuSection = {
   heading: string;
   items: string[];
