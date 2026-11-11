@@ -163,7 +163,7 @@
 }
 
 .menu-image-track img {
-  filter: blur(6px);
+  filter: blur(2px);
   transform: scale(1.04);
 }
 

@@ -259,7 +259,7 @@ function Index() {
             )}
           </div>
         </div>
-        <div className="pointer-events-none absolute inset-0 bg-background/75 backdrop-blur-xl" aria-hidden="true" />
+        <div className="pointer-events-none absolute inset-0 bg-background/35 backdrop-blur-sm" aria-hidden="true" />
         <div className="relative z-10 mx-auto max-w-4xl px-6">
           <Reveal className="text-center">
             <p className="font-body text-[0.65rem] tracking-[0.5em] text-accent uppercase">
@@ -275,7 +275,7 @@ function Index() {
           </Reveal>
 
           <Reveal className="mt-12">
-            <div className="relative rounded-3xl border border-accent/40 bg-card px-6 py-10 shadow-[0_30px_70px_-35px_oklch(0.35_0.06_50/0.5)] sm:px-12">
+            <div className="relative rounded-3xl border border-accent/50 bg-card/55 px-6 py-10 shadow-[0_30px_70px_-35px_oklch(0.35_0.06_50/0.5)] backdrop-blur-md sm:px-12">
               <div className="pointer-events-none absolute inset-3 rounded-2xl border border-accent/20" />
               <div className="grid gap-10 sm:grid-cols-2">
                 {menu.map((section) => (
