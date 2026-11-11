@@ -259,7 +259,7 @@ function Index() {
             )}
           </div>
         </div>
-        <div className="pointer-events-none absolute inset-0 bg-background/35 backdrop-blur-sm" aria-hidden="true" />
+        <div className="pointer-events-none absolute inset-0 bg-background/10 backdrop-blur-[2px]" aria-hidden="true" />
         <div className="relative z-10 mx-auto max-w-4xl px-6">
           <Reveal className="text-center">
             <p className="font-body text-[0.65rem] tracking-[0.5em] text-accent uppercase">
@@ -275,12 +275,12 @@ function Index() {
           </Reveal>
 
           <Reveal className="mt-12">
-            <div className="relative rounded-3xl border border-accent/50 bg-card/55 px-6 py-10 shadow-[0_30px_70px_-35px_oklch(0.35_0.06_50/0.5)] backdrop-blur-md sm:px-12">
+            <div className="relative rounded-3xl border border-accent/60 bg-card/80 px-6 py-10 shadow-[0_30px_70px_-35px_oklch(0.35_0.06_50/0.5)] backdrop-blur-md sm:px-12">
               <div className="pointer-events-none absolute inset-3 rounded-2xl border border-accent/20" />
               <div className="grid gap-10 sm:grid-cols-2">
                 {menu.map((section) => (
                   <div key={section.heading} className="text-center">
-                    <h3 className="font-display text-2xl text-primary sm:text-3xl">
+                    <h3 className="font-display text-2xl text-foreground sm:text-3xl">
                       {section.heading}
                     </h3>
                     <div className="divider-ornament mt-3 self-center" />
@@ -288,7 +288,7 @@ function Index() {
                       {section.items.map((item) => (
                         <li
                           key={item}
-                          className="font-body text-[0.9rem] leading-relaxed font-light text-muted-foreground"
+                          className="font-body text-[0.9rem] leading-relaxed text-foreground/85"
                         >
                           {item}
                         </li>
@@ -297,7 +297,7 @@ function Index() {
                   </div>
                 ))}
               </div>
-              <p className="mt-10 text-center font-body text-xs font-light tracking-[0.2em] text-muted-foreground/80 uppercase">
+              <p className="mt-10 text-center font-body text-xs tracking-[0.2em] text-foreground/75 uppercase">
                 {menuNote}
               </p>
             </div>
